@@ -6,6 +6,10 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 const productosTazas = JSON.parse(localStorage.getItem('productosTazas')) || [];
 const productosTazones = JSON.parse(localStorage.getItem('productosTazones')) || [];
 
+// Verificar que los productos están cargados
+console.log('Productos Tazas:', productosTazas);
+console.log('Productos Tazones:', productosTazones);
+
 // Función para mostrar productos de tazas y tazones
 function mostrarProductos() {
     mostrarProductosPorTipo('tazas', paginaActualTazas, 'productos-tazas');
@@ -23,6 +27,10 @@ function mostrarProductosPorTipo(tipo, pagina, contenedorId, colorFiltro = null)
     const productosPagina = productos.slice(inicio, fin);
 
     const contenedor = document.getElementById(contenedorId);
+    if (!contenedor) {
+        console.error(`Contenedor ${contenedorId} no encontrado.`);
+        return;
+    }
     contenedor.innerHTML = '';
 
     productosPagina.forEach(producto => {
@@ -121,6 +129,10 @@ document.getElementById('carrito-modal').addEventListener('click', function(even
         ocultarCarrito();
     }
 });
+
+// Inicializar los productos al cargar la página
+mostrarProductos();
+
 
 // Inicializar los productos al cargar la página
 mostrarProductos();
