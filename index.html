@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Tazas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="./imagenes/logo.webp" alt="Logo Don Tazas">
+        </div>
+        <div id="carrito" onclick="mostrarCarrito()">
+            <img src="./imagenes/CARRITO.png" alt="Carrito">
+            <span id="carrito-cantidad">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="tazas">
+            <h2>Sección Tazas</h2>
+            <div id="productos-tazas" class="productos">
+                <!-- Los productos se cargarán aquí mediante JavaScript -->
+            </div>
+            <div class="paginacion">
+                <button id="prevPageTazas" onclick="cambiarPaginaTazas(-1)">Anterior</button>
+                <button id="nextPageTazas" onclick="cambiarPaginaTazas(1)">Siguiente</button>
+            </div>
+        </section>
+
+        <section id="tazones">
+            <h2>Sección Tazones</h2>
+            <div id="filtros-tazones">
+                <button onclick="filtrarPorColor('todos')">Todos</button>
+                <button onclick="filtrarPorColor('rojo')">Rojo</button>
+                <button onclick="filtrarPorColor('azul')">Azul</button>
+                <button onclick="filtrarPorColor('verde')">Verde</button>
+                
+            </div>
+            <div id="productos-tazones" class="productos">
+                <!-- Los productos se cargarán aquí mediante JavaScript -->
+            </div>
+            <div class="paginacion">
+                <button id="prevPageTazones" onclick="cambiarPaginaTazones(-1)">Anterior</button>
+                <button id="nextPageTazones" onclick="cambiarPaginaTazones(1)">Siguiente</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright 2024</p>
+        <a href="login.html">admin</a>
+    </footer>
+    <div id="whatsapp-button">
+        <a href="https://wa.me/qr/YV6SKOTCAHSGP1" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+    </div>
+
+    <div id="carrito-modal" class="carrito-modal">
+        <div class="carrito-content">
+            <span class="close" onclick="ocultarCarrito()">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="carrito-items-list">
+                <!-- Los productos en el carrito se cargarán aquí mediante JavaScript -->
+            </div>
+            <label for="forma-pago">Forma de pago:</label>
+            <select id="forma-pago">
+                <option value="efectivo">Efectivo</option>
+                <option value="tarjeta">Tarjeta de Crédito</option>
+                <option value="transferencia">Transferencia Bancaria</option>
+            </select>
+            <button id="pagar">Pagar</button>
+            <p id="total">Total: 0 ARS</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

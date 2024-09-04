@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - Don Tazas</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Administración - Don Tazas</h1>
+        <a href="index.html" class="btn-main">Ir a la Página Principal</a>
+    </header>
+
+    <main>
+        <section>
+            <h2>Agregar Tazas</h2>
+            <form id="form-tazas">
+                <label for="nombre-taza">Nombre:</label>
+                <input type="text" id="nombre-taza" required>
+                <label for="precio-taza">Precio:</label>
+                <input type="text" id="precio-taza" required>
+                <label for="imagen-taza">Imagen:</label>
+                <input type="file" id="imagen-taza" accept="image/*" required>
+                <button type="submit">Agregar Taza</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Agregar Tazones</h2>
+            <form id="form-tazones">
+                <label for="nombre-tazon">Nombre:</label>
+                <input type="text" id="nombre-tazon" required>
+                <label for="precio-tazon">Precio:</label>
+                <input type="text" id="precio-tazon" required>
+                <label for="imagen-tazon">Imagen:</label>
+                <input type="file" id="imagen-tazon" accept="image/*" required>
+                <label for="color-tazon">Color:</label>
+                <input type="text" id="color-tazon" required>
+                <button type="submit">Agregar Tazón</button>
+            </form>
+        </section>
+
+        <section id="productos">
+            <h2>Productos Cargados</h2>
+            <h3>Tazas</h3>
+            <div id="productos-tazas-admin">
+                <!-- Productos Tazas serán cargados aquí -->
+            </div>
+            <h3>Tazones</h3>
+            <div id="productos-tazones-admin">
+                <!-- Productos Tazones serán cargados aquí -->
+            </div>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
